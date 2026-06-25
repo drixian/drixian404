@@ -1,31 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Drixian - 404 Not Found</title>
-    <link rel="stylesheet" href="frontend/public/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drixian404 • Under Construction</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#0a0f18;
+overflow:hidden;
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+/* Background */
+
+body:before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top,#1d4ed833,transparent 60%),
+linear-gradient(#0b1120,#05070c);
+}
+
+/* Stars */
+
+.stars{
+position:absolute;
+inset:0;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+background-size:60px 60px;
+opacity:.2;
+}
+
+/* Crane */
+
+.crane{
+position:absolute;
+left:8%;
+bottom:120px;
+width:220px;
+height:420px;
+}
+
+.tower{
+position:absolute;
+bottom:0;
+width:18px;
+height:100%;
+background:#888;
+}
+
+.arm{
+position:absolute;
+top:20px;
+left:10px;
+height:12px;
+width:180px;
+background:#999;
+}
+
+.cable{
+position:absolute;
+top:32px;
+left:170px;
+width:3px;
+height:150px;
+background:#666;
+animation:swing 4s ease-in-out infinite;
+transform-origin:top;
+}
+
+.hook{
+position:absolute;
+bottom:-12px;
+left:-4px;
+font-size:28px;
+}
+
+@keyframes swing{
+0%,100%{transform:rotate(-4deg);}
+50%{transform:rotate(4deg);}
+}
+
+/* Workers */
+
+.worker{
+position:absolute;
+bottom:70px;
+font-size:28px;
+animation:work 1.3s infinite alternate;
+}
+
+.worker:nth-child(2){
+left:44%;
+animation-delay:.3s;
+}
+
+.worker:nth-child(3){
+left:58%;
+animation-delay:.8s;
+}
+
+@keyframes work{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-6px);
+}
+}
+
+/* Main */
+
+.container{
+position:relative;
+z-index:5;
+text-align:center;
+max-width:700px;
+padding:30px;
+}
+
+.logo{
+font-size:56px;
+font-weight:900;
+letter-spacing:3px;
+color:#60a5fa;
+}
+
+.subtitle{
+margin-top:15px;
+font-size:20px;
+color:#b5c4d9;
+}
+
+.message{
+margin-top:10px;
+color:#8aa2c4;
+}
+
+.countdown{
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#101826;
+padding:20px;
+border-radius:16px;
+min-width:120px;
+box-shadow:0 0 20px rgba(59,130,246,.15);
+border:1px solid rgba(255,255,255,.05);
+}
+
+.number{
+font-size:42px;
+font-weight:900;
+color:#60a5fa;
+}
+
+.label{
+margin-top:8px;
+font-size:14px;
+text-transform:uppercase;
+color:#7f94b3;
+letter-spacing:2px;
+}
+
+.footer{
+margin-top:55px;
+font-size:14px;
+color:#66788d;
+}
+
+.barricade{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:70px;
+background:repeating-linear-gradient(
+45deg,
+#facc15 0 30px,
+#111 30px 60px
+);
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-    <strong>Drixian</strong>
-    <div>
-      <a href="index.html" style="color:#FFF; text-decoration:none; font-size: 14px;">Return Home</a>
-    </div>
-  </div>
-</header>
+<div class="stars"></div>
 
-<div style="max-width: 600px; margin: 50px auto; padding: 15px;">
-  <div class="box" style="border-top: 3px solid #1A4B75;">
-    <h2 style="color: #1A4B75; margin-bottom: 10px;">Error 404: Page Not Found</h2>
-    <p style="font-size: 14px; line-height: 1.5; margin-bottom: 15px;">
-      The requested URL or community page could not be located on the Drixian network. It may have been moved, deleted, or the address was typed incorrectly.
-    </p>
-    <hr style="border: 0; border-top: 1px solid #CCC; margin-bottom: 15px;">
-    <a href="index.html" class="btn-primary" style="text-decoration: none; display: inline-block;">Go Back to Main Feed</a>
-  </div>
+<div class="crane">
+<div class="tower"></div>
+<div class="arm"></div>
+<div class="cable">
+<div class="hook">⚓</div>
 </div>
+</div>
+
+<div class="worker" style="left:42%;">👷</div>
+<div class="worker">👷</div>
+<div class="worker">👷</div>
+
+<div class="container">
+
+<div class="logo">DRIXIAN404</div>
+
+<div class="subtitle">
+🏗️ Our Game Dev Studio is Building Something Big
+</div>
+
+<div class="message">
+We're putting the finishing touches on our next adventure.
+Come back when the countdown reaches zero.
+</div>
+
+<div class="countdown">
+
+<div class="card">
+<div class="number" id="days">0</div>
+<div class="label">Days</div>
+</div>
+
+<div class="card">
+<div class="number" id="hours">0</div>
+<div class="label">Hours</div>
+</div>
+
+<div class="card">
+<div class="number" id="minutes">0</div>
+<div class="label">Minutes</div>
+</div>
+
+<div class="card">
+<div class="number" id="seconds">0</div>
+<div class="label">Seconds</div>
+</div>
+
+</div>
+
+<div class="footer">
+Launching • <strong>July 12</strong>
+</div>
+
+</div>
+
+<div class="barricade"></div>
+
+<script>
+const launch = new Date("July 12, 2026 00:00:00").getTime();
+
+function updateCountdown(){
+
+const now = Date.now();
+
+const distance = launch - now;
+
+if(distance<=0){
+
+document.querySelector(".countdown").innerHTML=
+"<h1>🚀 We're Live!</h1>";
+
+return;
+}
+
+const days=Math.floor(distance/(1000*60*60*24));
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+daysEl.textContent=days;
+hoursEl.textContent=hours;
+minutesEl.textContent=minutes;
+secondsEl.textContent=seconds;
+}
+
+const daysEl=document.getElementById("days");
+const hoursEl=document.getElementById("hours");
+const minutesEl=document.getElementById("minutes");
+const secondsEl=document.getElementById("seconds");
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+</script>
 
 </body>
 </html>
