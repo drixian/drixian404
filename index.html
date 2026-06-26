@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drixian - Verification Required</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .captcha-container {
+            text-align: center;
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="captcha-container">
+        <h2>Security Check</h2>
+        <p>Please verify you are human to access Drixian.</p>
+        
+        <form action="verify.php" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LcayDYtAAAAAEVRqc5klEKMG9QPhrQRJeriuMox" data-theme="dark"></div>
+            <br/>
+            <button type="submit">Proceed to Site</button>
+        </form>
+    </div>
+
+</body>
+</html>
