@@ -1,0 +1,71 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center content completely on the screen */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Layout container */
+.error-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+}
+
+/* Large 404 text */
+.error-code {
+    font-size: 8rem;
+    font-weight: 900;
+    color: #e74c3c;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* Main error header */
+.error-heading {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Descriptive text */
+.error-message {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Interactive CTA button */
+.home-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effects */
+.home-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.home-button:active {
+    transform: translateY(0);
+}
