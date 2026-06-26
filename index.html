@@ -34,6 +34,11 @@
             cursor: pointer;
         }
         button:hover { background-color: #0056b3; }
+        .error-msg {
+            color: #ff6b6b;
+            margin-top: 15px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -42,12 +47,32 @@
         <h2>Security Check</h2>
         <p>Please verify you are human to access Drixian.</p>
         
-        <form action="verify.php" method="POST">
+        <form id="captcha-form" onsubmit="validateCaptcha(event)">
             <div class="g-recaptcha" data-sitekey="6Le7zDYtAAAAAAlgQ9bKN9iXoIxUPmdBleOHjrXL" data-theme="dark"></div>
             <br/>
             <button type="submit">Proceed to Site</button>
+            <div id="error" class="error-msg">Please complete the reCAPTCHA first!</div>
         </form>
     </div>
+
+    <script>
+        function validateCaptcha(event) {
+            // Prevent the form from trying to reload the page
+            event.preventDefault();
+            
+            // Check if the user successfully checked the reCAPTCHA box
+            var response = grecaptcha.getResponse();
+            
+            if (response.length === 0) {
+                // Captcha is not cleared, show error message
+                document.getElementById('error').style.display = 'block';
+            } else {
+                // Captcha passed! Redirect them to your main content page
+                // CHANGE 'main.html' to whatever your actual homepage file is named
+                window.location.href = "main.html"; 
+            }
+        }
+    </script>
 
 </body>
 </html>
